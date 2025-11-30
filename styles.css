@@ -1,9 +1,9 @@
-/* CSS BY YOUR NAME */
+/* CSS BY Caleb Ray */
 
 /* IMPORTED FONTS*/
-/* IMPORT "INTER" FROM GOOGLE FONTS"
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-/* CSS RESET */
+/*#region CSS RESET */
 /* http://meyerweb.com/eric/tools/css/reset/
 v2.0 | 20110126
 License: none (public domain)
@@ -52,6 +52,8 @@ table {
     border-spacing: 0;
 }
 
+/* #endregion CSS RESET */
+
 /* ROOT VARIABLES */
 :root {
     --blue: #007BFF;
@@ -66,6 +68,158 @@ table {
 
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
 
+body {
+    min-width: 400px;
+    font-family: var(--font);
+
+}
+
+header {
+    background-color: var(--black);
+    padding: 1rem 0;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+
+/*#region MOBILE MENU  */
+
+nav ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    text-align: center;
+    max-height: 0;
+}
+
+nav h2 {
+    visibility: hidden;
+    height: 1px;
+}
+
+nav li a {
+    display: block;
+    padding: 1rem;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: var(--white);
+
+    transition: background-color .3s ease-in;
+}
+
+nav label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 1rem;
+    user-select: none;
+}
+
+nav label span {
+    background-color: var(--white);
+    display: block;
+    height: 0.25rem;
+    position: relative; 
+    transition: background-color .3s ease-out;
+    width: 2rem;
+}
+
+nav label span::before, 
+nav label span::after {
+    background: var(--white);
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+}
+
+nav label span::before {
+    top: 0.75rem;
+}
+
+nav label span::after {
+    top: -0.75rem;
+}
+
+nav input {
+    display: none;
+}
+
+nav input:checked ~ ul {
+    max-height: 500px;
+}
+
+nav input:checked ~ label span {
+    background: transparent;
+}
+
+nav input:checked ~ label span::before {
+    transform: rotate(-45deg);
+}
+
+nav input:checked ~ label span::after {
+    transform: rotate(45deg);
+}
+
+nav input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0;
+}
+
+@media screen and (min-width: 800px){
+  nav ul {
+    overflow:visible;
+    position:absolute;
+    top: 1.5rem;
+    left:.5rem;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+  }
+  nav li a {
+    display:inline-block;
+}
+  nav label span, nav input {
+    display:none;
+  }
+}
+
+/*#endregion END MOBILE MENU  */
+
+main {
+    background-color: var(--white);
+
+}
+
+.offer-card {
+    background-color: var(--blue);
+    color: var(--white);
+    border-radius: 15px;
+}
+
+#hero {
+    color: var(--white);
+}
+
+footer {
+    background-color: var(--black);
+
+}
+
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
 .container {
     width: 90%;
@@ -74,7 +228,7 @@ table {
 }
 
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
- {
+#hero {
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
     height: 80vh;
     display: grid;
@@ -84,11 +238,21 @@ table {
     overflow: hidden;
 }
 
-/* ADD FLOATING SVG LOGO BEFORE THE H1 */
- {
-    content: "";
+h1 {
+    position: relative;
+    color: var(--blue);
+    padding-left: 4rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
 
-    left:-.5rem;
+/* ADD FLOATING SVG LOGO BEFORE THE H1 */
+h1::before {
+    content: "";
+    position: absolute;
+    left:0;
+    top: 50%;
+    transform: translateY(-50%);
     width: 3.75rem;
     height: 3.75rem;
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
