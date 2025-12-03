@@ -278,6 +278,13 @@ main {
     padding: 1rem;
     margin: 1rem;
     font-weight: bold;
+    transition: transform .2s ease;
+
+}
+
+#hero a:hover {
+    background-color: var(--red);
+    transform: scale(1.03);
 }
 
 #expertise {
@@ -306,6 +313,11 @@ h3 {
     border-radius: 15px;
     padding: 1rem;
     margin: 0.75rem 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.offer-card:hover {
+    transform: translateY(-4px);
 }
 
 p {
@@ -374,6 +386,7 @@ form {
     border: 3px solid var(--blue);
 }
 
+
 .form-field textarea {
     min-height: 120px;
     resize: vertical;
@@ -390,7 +403,13 @@ button[type="submit"] {
     cursor: pointer;
     font-family: var(--font);
     font-size: 1.25rem;
+    transition: transform 0.2s ease;
 
+}
+
+button[type="submit"]:hover {
+    background-color: var(--red);
+    transform: scale(1.03);
 }
 
 footer {
@@ -448,9 +467,27 @@ footer a {
     }
 }
 /* ADD ANIMATION ON stepUp for 1s ease-in-out forwards */
-/* .bar { animation was here } */
+/* .bar { animation was here--moved it to the .bar selector } */
 
 /* #endregion BAR CHART  */
+
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeInDown 0.5s ease-out forwards;
+}
 
 /* MEDIA QUERIES (MEDIUM) */ 
 
