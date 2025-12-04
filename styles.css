@@ -559,7 +559,7 @@ footer a {
     #growth {
         display: flex;
         flex-direction: column;
-        align-self: end;
+        align-self: start;
         gap: 0.5rem;
     }
 
@@ -571,6 +571,7 @@ footer a {
     .results-table,
     #bar-chart {
         width: 100%;
+        margin-top: auto;
     }
 }
 
