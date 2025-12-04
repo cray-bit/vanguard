@@ -241,7 +241,7 @@ main {
 }
 
 #hero .container {
-    -webkit-backdrop-filter: blur(4px);
+    /* -webkit-backdrop-filter: blur(4px); */
     backdrop-filter: blur(4px);
 
     padding: 1rem;
