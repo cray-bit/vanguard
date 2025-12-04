@@ -142,7 +142,7 @@ nav h2 {
 nav li a {
     display: block;
     padding: 1.5rem 3rem;
-
+    border-radius: 5px;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
@@ -211,22 +211,6 @@ nav input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.st
     top: 0;
 }
 
-@media screen and (min-width: 800px){
-  nav ul {
-    overflow:visible;
-    position:absolute;
-    top: 1.5rem;
-    left:.5rem;
-    display: grid;
-    grid-template-columns:1fr 1fr 1fr;
-  }
-  nav li a {
-    display:inline-block;
-}
-  nav label span, nav input {
-    display:none;
-  }
-}
 
 /*#endregion END MOBILE MENU  */
 
@@ -302,7 +286,7 @@ h2 {
 h3 {
     font-size: 1.75rem;
     padding: 1rem;
-    /* margin: 0.25rem; */
+    margin: 0.25rem;
     font-weight: bold;
 }
 
@@ -317,6 +301,10 @@ h3 {
     padding: 1rem;
     margin: 0.75rem 0;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.offer-card h3 {
+    font-size: 1.5rem;
 }
 
 .offer-card:hover {
@@ -348,7 +336,7 @@ p {
 
 #profits th,
 #profits td {
-    padding: 0.75rem;
+    padding: 1rem;
     border: 2px solid var(--charcoal);
 }
 
@@ -381,6 +369,10 @@ form {
 
 .form-field label {
     text-transform: capitalize;
+}
+
+.form-field input {
+    height: 1.75rem;
 }
 
 .form-field input,
@@ -512,7 +504,7 @@ footer a {
         overflow: visible;
         max-height: none;
         width: auto;
-        gap: 1.5rem;
+        gap: 1rem;
         margin: 0;
         padding: 0;
         list-style: none;
@@ -576,3 +568,37 @@ footer a {
 }
 
 /* MEDIA QUERIES (LARGE) */
+
+@media (min-width: 1024px) {
+    #offerings .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    }
+
+    #offerings h2, 
+    #offerings p {
+        grid-column: 1/-1;
+    }
+
+    form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        align-items: start;
+    }
+
+    .form-field {
+        display: flex;
+        flex-direction: column;
+    }
+
+    button[type="submit"] {
+        margin: 1rem auto;
+        width: 100%;
+        grid-column: 2;
+    }
+
+
+
+}
