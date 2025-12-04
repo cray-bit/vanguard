@@ -107,6 +107,7 @@ h1 {
 }
 
 h1 a {
+    display: inline-block;
     text-decoration: none;
     color: var(--blue);
     font-size: 2rem;
