@@ -103,10 +103,15 @@ nav a:hover {
 
 h1 {
     position: relative;
-    color: var(--blue);
     padding-left: 4rem;
+}
+
+h1 a {
+    text-decoration: none;
+    color: var(--blue);
     font-size: 2rem;
     font-weight: bold;
+
 }
 
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
